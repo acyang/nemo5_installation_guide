@@ -19,17 +19,17 @@ svn checkout https://nanohub.org/tools/nemo/svn/trunk/NEMO .
 
 prototype/: NEMO 5 source code
 
-
 libs/: 3rd party libraries
-
 
 manual/: user manual (compile using latex ../bin/nemo --manual)
 
-
 doc/: doxygen documentation (developer manual)
-include/: .h-files, needed e.g. for using NEMO 5 as a library
-src/: .cpp-files
-bin/: location of nemo executable
+  
+  include/: .h-files, needed e.g. for using NEMO 5 as a library
+  
+  src/: .cpp-files
+  
+  bin/: location of nemo executable
 
 
 

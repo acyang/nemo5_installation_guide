@@ -15,21 +15,25 @@ svn checkout https://nanohub.org/tools/nemo/svn/trunk/NEMO .
 
 * 檔案結構
 
-/ : NEMO5s root directory
+>/ : NEMO5s root directory
 
-prototype/: NEMO 5 source code
+>>prototype/: NEMO 5 source code
 
-libs/: 3rd party libraries
+>>>manual/: user manual (compile using latex ../bin/nemo --manual)
 
-manual/: user manual (compile using latex ../bin/nemo --manual)
-
-doc/: doxygen documentation (developer manual)
+>>>doc/: doxygen documentation (developer manual)
   
-  include/: .h-files, needed e.g. for using NEMO 5 as a library
+>>>include/: .h-files, needed e.g. for using NEMO 5 as a library
   
-  src/: .cpp-files
+>>>src/: .cpp-files
   
-  bin/: location of nemo executable
+>>>bin/: location of nemo executable
+
+>>libs/: 3rd party libraries
+
+>>mkfiles/: variable define file
+
+
 
 
 

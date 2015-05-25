@@ -15,11 +15,9 @@ svn checkout https://nanohub.org/tools/nemo/svn/trunk/NEMO .
 
 * 檔案結構
 
-**/** : NEMO5s root directory
+/ : NEMO5s root directory
 
-|
-
-   **prototype/**: NEMO 5 source code
+prototype/: NEMO 5 source code
 
 
 libs/: 3rd party libraries

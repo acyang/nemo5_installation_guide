@@ -130,3 +130,22 @@ gcc4.3.4/4.8.3+mvapich2-1.9(最後編譯主程式改用4.8.3)
 
 gcc4.8.3+mpich3(在另外的centos6上成功)
 
+###失敗的工具組
+gcc4.8.3+mvapich2-1.9(VTK編譯失敗)
+
+INTEL composer_xe_2015.2.164 + impi5.0.3.048
+
+INTEL composer_xe_2013.5.192 + impi4.1.1.036都是在編譯主程式時出現以下錯誤
+```
+ModeSpace.cpp(2770): error: no instance of overloaded function "std::complex<double>::real" matches the argument list
+            argument types are: (double)
+            object type is: cplx
+          Matrix_element.real(Real_part[i+j*Mat_num_rows]);
+                         ^
+
+ModeSpace.cpp(2771): error: no instance of overloaded function "std::complex<double>::imag" matches the argument list
+            argument types are: (double)
+            object type is: cplx
+          Matrix_element.imag(Imag_part[i+j*Mat_num_rows]);
+                         ^
+```

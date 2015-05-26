@@ -92,7 +92,9 @@ End of search list.
 
  10:未測試。
 
- 註：LIBMESH很挑INTEL編譯器版本，例如intel V14版的要到libmesh0.9.3才支援。
+ 註1：LIBMESH很挑INTEL編譯器版本，例如intel V14版的要到libmesh0.9.3才支援。
+ 
+ 註2：主程式內會用到FEAST Eigenvalue Solver，MKL要11.0.2
 
 * PGI
 

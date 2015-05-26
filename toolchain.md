@@ -116,7 +116,7 @@ End of search list.
 
 
 ###可用工具組
-gcc4.6.1+mvapich2-1.8(何博成功)
+INTEL composer_xe_2015.2.164 + impi4.1.3.049(何博成功)
 
 執行檔位於
 /pkg/chem/nemo5-r17881/prototype/bin/nemo

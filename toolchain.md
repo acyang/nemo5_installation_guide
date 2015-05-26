@@ -84,7 +84,7 @@ End of search list.
 
  2015:使用前要先 ```source /pkg/intel/2015/composer_xe_2015.2.164/bin/compilervars.sh intel64```
 
- 2013:未測試。
+ 2013:使用前要先```source /pkg/intel/2013/composer_xe_2013.5.192/bin/compilervars.sh intel64```
 
  12:使用前要先```source /pkg/intel/12/composer_xe_2011_sp1.9.293/bin/compilervars.sh intel64```
 

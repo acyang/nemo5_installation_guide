@@ -33,6 +33,8 @@ svn checkout https://nanohub.org/tools/nemo/svn/trunk/NEMO .
 
 >>mkfiles/: variable define file
 
+>>regression_test/: examples and testing cases 
+
 
 
 

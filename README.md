@@ -5,11 +5,14 @@ NEMO5是由Klimeck group所開發之NanoElectronics MOdeling工具，包含NEMO-
 | Version Number | Revised Date | Comments |
 | -- | -- | -- |
 | 1st | 2015-05-20 | Initial Release |
+| 2nd | 2015-05-27 | 新增結果測試與總結 |
 
 # 關於作者
 * 國網中心高速計算與應用組助理研究員楊安正博士
 * 國網中心高速計算與應用組研究員何智雄博士
 
+本文以Markdown的語法寫成，
+為得最新及最佳瀏覽效果請瀏覽線上版本
 
 
 

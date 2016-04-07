@@ -86,7 +86,9 @@ clean:
 ```
 LD_LIBRARY_PATH=/pkg/biology/Nemo5/Nemo5_intel/libs/python/lib:$LD_LIBRARY_PATH
 ```
-註1：有2.7.9可以嘗試，不要用到3版的。
+註1：有2.7.11可以嘗試，不要用到3版的。
+
+```wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz```
 
 註2：NEMO5不支援statically link to python，所以不編static library也可以。
 * boost

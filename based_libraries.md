@@ -1,7 +1,7 @@
 # 2.編譯底層函式庫
 * vtk
 
- 進去修改Makefile內關於parallel make的設定，可以把17改大一點。
+ 進去$(LIB_TOP)/vtk，修改Makefile內關於parallel make的設定，可以把17改大一點。
 
 ```
 include ../make.inc
@@ -26,7 +26,10 @@ VTK/CMakeLists.txt:
 	chmod -R a+w VTK/;
 ```
 修改後存檔，再make。
-註1：有5.10.1可以嘗試，不要用到6版的。
+
+註1：5.10.1是5系列最終般本，不要用到更新的。
+
+```wget http://www.vtk.org/files/release/5.10/vtk-5.10.1.tar.gz```
 
 ~~註2：libs/vtk/VTK/CMake/vtkDetermineCompilerFlags.cmake裡刪除-i_dynamic選項，新版編譯器已不支援。~~
 ```

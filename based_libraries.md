@@ -64,7 +64,7 @@ build:
 
 $(PYTHON_VERSION)/Makefile:$(PYTHON_VERSION)/configure
 	(cd $(PYTHON_VERSION); \
-	 ./configure --prefix="$(PYTHON_PREFIX)" --enable-unicode=ucs4 --enable-shared --without-gcc CC=$(CC) CXX=$(CXX); )
+	 ./configure --prefix="$(PYTHON_PREFIX)" --enable-unicode=ucs4 --enable-shared --without-gcc --with-valgrind --with-wctype-functions --with-ensurepip --with-libs=-lz CC=$(CC) CXX=$(CXX); )
 
 $(PYTHON_VERSION)/python: build $(PYTHON_VERSION)/Makefile
 	@echo "##################################################################"
@@ -130,6 +130,8 @@ bootstrap.sh_1_51_0.patch
 ```
 註1：安裝完訊息應該是...updated 10698 targets...而不是...failed updating 56 targets...。
 註2：有1_57_0可以嘗試。patch檔可以直接沿用。
+
+
 * hdf5
 
 由於新版intel編譯器把libirc改成libintlc所以要在LDFLAGS加上-lintlc

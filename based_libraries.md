@@ -1,7 +1,7 @@
 # 2.編譯底層函式庫
 * vtk
 
- 修改Makefile內關於parallel make的設定。
+ 進去修改Makefile內關於parallel make的設定，可以把17改大一點。
 
 ```
 include ../make.inc
@@ -14,20 +14,21 @@ all: static shared
 static: VTK/CMakeLists.txt
 	(cd VTK/; export CC="$(MPICC)"; export CXX="$(MPICXX)"; \
 	 cmake -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=$(PWD) .; \
-	 make -j 16; make install)
+	 make -j 24; make install)
 
 shared: VTK/CMakeLists.txt
 	(cd VTK/; export CC="$(MPICC)"; export CXX="$(MPICXX)"; \
 	 cmake -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=$(PWD) .; \
-	 make -j 16; make install)
+	 make -j 24; make install)
 
 VTK/CMakeLists.txt:
 	tar zxvf vtk-$(VTK_VERSION).tar.gz
 	chmod -R a+w VTK/;
 ```
+修改後存檔，再make。
 註1：有5.10.1可以嘗試，不要用到6版的。
 
-註2：libs/vtk/VTK/CMake/vtkDetermineCompilerFlags.cmake裡刪除-i_dynamic選項，新版編譯器已不支援。
+~~註2：libs/vtk/VTK/CMake/vtkDetermineCompilerFlags.cmake裡刪除-i_dynamic選項，新版編譯器已不支援。~~
 ```
 IF(_MAY_BE_INTEL_COMPILER)
   INCLUDE(${VTK_CMAKE_DIR}/TestNO_ICC_IDYNAMIC_NEEDED.cmake)

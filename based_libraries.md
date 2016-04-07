@@ -27,13 +27,13 @@ VTK/CMakeLists.txt:
 ```
 修改後存檔，再make。
 
-註1：5.10.1是5系列最終般本，不要用到更新的。
+註：5.10.1是5系列最終般本，不要用到更新的。
 
 ```wget http://www.vtk.org/files/release/5.10/vtk-5.10.1.tar.gz```
 
 ~~註2：libs/vtk/VTK/CMake/vtkDetermineCompilerFlags.cmake裡刪除-i_dynamic選項，新版編譯器已不支援。~~
-```
-IF(_MAY_BE_INTEL_COMPILER)
+
+~~IF(_MAY_BE_INTEL_COMPILER)
   INCLUDE(${VTK_CMAKE_DIR}/TestNO_ICC_IDYNAMIC_NEEDED.cmake)
   TESTNO_ICC_IDYNAMIC_NEEDED(NO_ICC_IDYNAMIC_NEEDED ${VTK_CMAKE_DIR})
   IF(NO_ICC_IDYNAMIC_NEEDED)
@@ -41,8 +41,8 @@ IF(_MAY_BE_INTEL_COMPILER)
   ELSE(NO_ICC_IDYNAMIC_NEEDED)
     SET(VTK_REQUIRED_CXX_FLAGS "${VTK_REQUIRED_CXX_FLAGS}")
   ENDIF(NO_ICC_IDYNAMIC_NEEDED)
-ENDIF(_MAY_BE_INTEL_COMPILER)
-```
+ENDIF(_MAY_BE_INTEL_COMPILER)~~
+
 * python
 
 修改configure部分以及取消patch，原檔案只有COPY執行檔和函式庫到資料夾，所以再用正規作法加上make install安裝比較不會有問題。為了要與BOOST連動所以configure參數要加上--enable-unicode=ucs4 --enable-shared

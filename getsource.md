@@ -4,6 +4,7 @@
 
 註冊nanohub後，下載tarball
 https://nanohub.org/resources/21695/download/Nemo5_r17881.tgz
+https://nanohub.org/resources/22750/download/Nemo5_r21229.tgz
 
 * svn checkout
 
@@ -34,8 +35,3 @@ svn checkout https://nanohub.org/tools/nemo/svn/trunk/NEMO .
 >>mkfiles/: variable define file
 
 >>regression_test/: examples and testing cases 
-
-
-
-
-

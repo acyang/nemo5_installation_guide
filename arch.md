@@ -3,7 +3,8 @@
 ```
 ./configure.sh custom
 ```
-產生make.inc以及mkfiles/make.inc.custom，還有prototype資料夾下的部分檔案。
+將產生make.inc以及mkfiles/make.inc.custom，還有prototype資料夾下的部分檔案。
+這些檔案內定義的內容，將在編譯第三方函式庫及主程式時被使用。
 根據所選擇的工具組修改make.inc以及mkfiles/make.inc.custom
 make.inc
 ```
@@ -47,7 +48,7 @@ USER = $(shell whoami)
 #<ss> -axP instead of -msse3; use mpich-intel-10.1.013
 
 ifeq ($(BUILD_TYPE),custom)
-include $(PROJECT_TOP)/mkfiles/make.inc.custom.intel
+include $(PROJECT_TOP)/mkfiles/make.inc.custom
 endif
 
 ###########################################################################

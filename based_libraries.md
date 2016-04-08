@@ -156,5 +156,5 @@ make install
 ```
 註：升級後的ALPS OS中的hdf5是1.8.12，可以直接調用。
 
-路徑就在/usr/include 或者是 /usr/lib64
+路徑就在/usr/include/hdf 或者是 /usr/lib64
 

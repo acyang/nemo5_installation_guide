@@ -138,7 +138,9 @@ bootstrap.sh_1_51_0.patch
 
 註2：有1_60_0可以嘗試。patch檔可以直接沿用。
 
-註3：
+註3：NEMO5會呼叫到-lboost_filesystem -lboost_system -lboost_regex -lboost_serialization -lboost_python -lboost_unit_test_framework等六個函式庫，升級後的ALPS OS中是1.53.0，也包含上述元件，所以也就直接調用。
+
+路徑就在/usr/include 或者是 /usr/lib64
 
 * hdf5
 
@@ -152,5 +154,7 @@ cd hdf5-1.8.10-patch1
 make
 make install
 ```
+註：升級後的ALPS OS中的hdf5是1.8.12，可以直接調用。
 
+路徑就在/usr/include 或者是 /usr/lib64
 

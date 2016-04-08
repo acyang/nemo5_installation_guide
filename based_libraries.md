@@ -45,9 +45,10 @@ ENDIF(_MAY_BE_INTEL_COMPILER)~~
 
 * python
 
-~~修改configure部分以及取消patch，原檔案只有COPY執行檔和函式庫到資料夾，所以再用正規作法加上make install安裝比較不會有問題。為了要與BOOST連動所以configure參數要加上--enable-unicode=ucs4 --enable-shared
+修改configure部分以及取消patch，原檔案只有COPY執行檔和函式庫到資料夾，所以再用正規作法加上make install安裝比較不會有問題。
+為了要與BOOST連動所以configure參數要加上--enable-unicode=ucs4 --enable-shared
 
-
+```
 include ../../make.inc
 PYTHON_VERSION   = Python-2.7.3
 PYTHON_PREFIX    = $(PWD)
@@ -79,19 +80,23 @@ $(PYTHON_VERSION)/python: build $(PYTHON_VERSION)/Makefile
 
 clean:
 	rm -rf build/ $(PYTHON_VERSION)/
+```
 
 
 之後利用到python的指令都要加上
 
-
+```
 LD_LIBRARY_PATH=/pkg/biology/Nemo5/Nemo5_intel/libs/python/lib:$LD_LIBRARY_PATH
-~~
+```
 
 註1：有2.7.11可以嘗試，不要用到3版的。
 
 ```wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz```
 
 註2：NEMO5不支援statically link to python，所以不編static library也可以。
+
+註3：ALPS作業系統升級後，安裝在/pkg/free/Python-2.7.11的python，有支援ucs4，以及編譯成動態函式庫，可以直接拿來使用，使用前請先module load tools/Python-2.7.11。
+
 * boost
 
 因為要讓自編的python和boost連動必須修改project-config.jam檔，而project-config.jam又是由bootstrap.sh所產生，所以直接為該檔案打上patch。
@@ -130,8 +135,10 @@ bootstrap.sh_1_51_0.patch
  fi
 ```
 註1：安裝完訊息應該是...updated 10698 targets...而不是...failed updating 56 targets...。
-註2：有1_57_0可以嘗試。patch檔可以直接沿用。
 
+註2：有1_60_0可以嘗試。patch檔可以直接沿用。
+
+註3：
 
 * hdf5
 

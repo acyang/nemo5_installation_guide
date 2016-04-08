@@ -45,9 +45,9 @@ ENDIF(_MAY_BE_INTEL_COMPILER)~~
 
 * python
 
-修改configure部分以及取消patch，原檔案只有COPY執行檔和函式庫到資料夾，所以再用正規作法加上make install安裝比較不會有問題。為了要與BOOST連動所以configure參數要加上--enable-unicode=ucs4 --enable-shared
+~~修改configure部分以及取消patch，原檔案只有COPY執行檔和函式庫到資料夾，所以再用正規作法加上make install安裝比較不會有問題。為了要與BOOST連動所以configure參數要加上--enable-unicode=ucs4 --enable-shared
 
-```
+
 include ../../make.inc
 PYTHON_VERSION   = Python-2.7.3
 PYTHON_PREFIX    = $(PWD)
@@ -79,13 +79,14 @@ $(PYTHON_VERSION)/python: build $(PYTHON_VERSION)/Makefile
 
 clean:
 	rm -rf build/ $(PYTHON_VERSION)/
-```
+
 
 之後利用到python的指令都要加上
 
-```
+
 LD_LIBRARY_PATH=/pkg/biology/Nemo5/Nemo5_intel/libs/python/lib:$LD_LIBRARY_PATH
-```
+~~
+
 註1：有2.7.11可以嘗試，不要用到3版的。
 
 ```wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz```

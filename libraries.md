@@ -4,6 +4,7 @@
 cd libs
 ./configure --with-vtk=vtk --with-vtk-version=-5.10 --with-hdf5=hdf5/hdf5-1.8.10-patch1/bin/h5cc --with-petsc-version="3.4.3" --with-petsc-real-arch=linux --with-petsc-complex-arch=linux-complex --with-slepc-version="3.4.3" --with-slepc-real-arch=linux  --with-slepc-complex-arch=linux-complex --with-arpack=ARPACK --with-libmesh-version="0.9.2.1" --with-tao-version="2.2.0" CC=icc CXX=icpc FC=ifort F77=ifort MPICC=mpiicc MPICXX=mpiicpc MPIFC=mpiifort MPIF77=mpiifort PYTHON=python/bin/python LD_LIBRARY_PATH=/pkg/biology/Nemo5/Nemo5_intel/libs/python/lib:$LD_LIBRARY_PATH
 ```
+
 * ARPACK
 ```
 cd ARPACK

@@ -159,3 +159,20 @@ make install
 
 路徑就在/usr/include/hdf 或者是 /usr/lib64
 
+升級後的ALPS，/usr/bin/python是2.7.5版且支援UCS-4所以可以不用自行編譯。
+
+註：How to check python UCS support
+
+When built with --enable-unicode=ucs4:
+```
+>>> import sys
+>>> print sys.maxunicode
+1114111
+```
+
+When built with --enable-unicode=ucs2:
+```
+>>> import sys
+>>> print sys.maxunicode
+65535
+```

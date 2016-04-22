@@ -1,5 +1,5 @@
 # 3.編譯函式庫
-準備好底層函式庫之後，回到libs根據實際上要使用的編譯器、函式庫的版本、安裝路徑餵給./configure，他會在需要編譯的函式庫資料夾產生Makefil以及make.inc，如果心臟夠大顆可以直接使用build.sh直接批次編譯，但是我還是喜歡一個一個編完確定結果。
+準備好底層函式庫之後，回到libs根據實際上要使用的編譯器、函式庫的版本、安裝路徑餵給./configure，他會在需要編譯的每一個函式庫資料夾產生Makefile以及make.inc，如果心臟夠大顆可以直接使用build.sh直接批次編譯，但是我還是喜歡一個一個編完確定結果。
 ```
 cd libs
 ./configure --with-vtk=vtk --with-vtk-version=-5.10 --with-hdf5=hdf5/hdf5-1.8.10-patch1/bin/h5cc --with-petsc-version="3.4.3" --with-petsc-real-arch=linux --with-petsc-complex-arch=linux-complex --with-slepc-version="3.4.3" --with-slepc-real-arch=linux  --with-slepc-complex-arch=linux-complex --with-arpack=ARPACK --with-libmesh-version="0.9.2.1" --with-tao-version="2.2.0" CC=icc CXX=icpc FC=ifort F77=ifort MPICC=mpiicc MPICXX=mpiicpc MPIFC=mpiifort MPIF77=mpiifort PYTHON=python/bin/python LD_LIBRARY_PATH=/pkg/biology/Nemo5/Nemo5_intel/libs/python/lib:$LD_LIBRARY_PATH

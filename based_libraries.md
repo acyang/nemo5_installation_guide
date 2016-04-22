@@ -7,7 +7,7 @@
 include ../make.inc
 
 VTK_VERSION = 5.10.1
-INSTALL_DIR = $(PWD)/$(VTK_VERSION) # put vtk in different folder
+INSTALL_DIR = $(PWD)
 
 all: static shared
 

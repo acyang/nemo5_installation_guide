@@ -7,7 +7,7 @@
 include ../make.inc
 
 VTK_VERSION = 5.10.1
-INSTALL_DIR = $(PWD)/$(VTK_VERSION)
+INSTALL_DIR = $(PWD)/$(VTK_VERSION) # put vtk in different folder
 
 all: static shared
 
@@ -23,7 +23,7 @@ shared: VTK/CMakeLists.txt
 
 VTK/CMakeLists.txt: 
 	tar zxvf vtk-$(VTK_VERSION).tar.gz
-	mv VTK$(VTK_VERSION) VTK
+	mv VTK$(VTK_VERSION) VTK # only 5.10.1 need to rename folder
 	chmod -R a+w VTK/; # mandatory, otherwise make process will fail
 ```
 修改後存檔，再make。

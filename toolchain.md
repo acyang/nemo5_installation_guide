@@ -5,7 +5,7 @@
  沒特殊限制。
 * cmake
 
- 沒特殊限制。
+ 編譯VTK需要cmake2.8.8以上。
 * imake
 
  沒特殊限制。
@@ -13,86 +13,41 @@
 ###編譯器
 * GCC
 
- 4.3.4:系統預設值
+ 4.8.3:系統預設值
 
- cpp -v
+ gcc -v
  ```
 Using built-in specs.
-Target: x86_64-suse-linux
-Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,java,ada --enable-checking=release --with-gxx-include-dir=/usr/include/c++/4.3 --enable-ssp --disable-libssp --with-bugurl=http://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --disable-libgcj --disable-libmudflap --with-slibdir=/lib64 --with-system-zlib --enable-__cxa_atexit --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-version-specific-runtime-libs --program-suffix=-4.3 --enable-linux-futex --without-system-libunwind --with-cpu=generic --build=x86_64-suse-linux
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.3/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.3-20140911/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
 Thread model: posix
-gcc version 4.3.4 [gcc-4_3-branch revision 152973] (SUSE Linux)
-COLLECT_GCC_OPTIONS='-E' '-v' '-mtune=generic'
- /usr/lib64/gcc/x86_64-suse-linux/4.3/cc1 -E -quiet -v - -mtune=generic
-#include "..." search starts here:
-#include <...> search starts here:
- /usr/local/include
- /usr/lib64/gcc/x86_64-suse-linux/4.3/include
- /usr/lib64/gcc/x86_64-suse-linux/4.3/include-fixed
- /usr/lib64/gcc/x86_64-suse-linux/4.3/../../../../x86_64-suse-linux/include
- /usr/include
-End of search list.
+gcc version 4.8.3 20140911 (Red Hat 4.8.3-9) (GCC)
  ```
- 4.6.1: 使用前要先 ```source /pkg/local/gcc/4.6.1/gcc461.sh```
+ 5.3.0: 使用前要先 ```module load compiler/gcc/5.3.0```
 
- cpp -v
+ gcc -v
 ```
 Using built-in specs.
-COLLECT_GCC=cpp
-COLLECT_LTO_WRAPPER=/pkg/local/gcc/4.6.1/libexec/gcc/x86_64-unknown-linux-gnu/4.6.1/lto-wrapper
-Target: x86_64-unknown-linux-gnu
-Configured with: ../configure --prefix=/pkg/local/gcc/4.6.1
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/pkg/gcc/5.3.0/libexec/gcc/x86_64-redhat-linux/5.3.0/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/pkg/gcc/5.3.0 --mandir=/pkg/gcc/5.3.0/man --libdir=/pkg/gcc/5.3.0/lib64 --build=x86_64-redhat-linux --disable-multilib --enable-version-specific-runtime-libs=yes --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --with-slibdir=/pkg/gcc/5.3.0/lib64 --with-mpc-include=/usr/include --with-mpc-lib=/usr/lib64 --with-mpfr-include=/usr/include --with-mpfr-lib=/usr/lib64 --with-gmp-include=/usr/include --with-gmp-lib=/usr/lib64 --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl-include=/pkg/gnu/include --with-isl-lib=/pkg/gnu/lib64 --with-cloog-include=/pkg/gnu/include --with-cloog-lib=/pkg/gnu/lib64 --enable-gnu-indirect-function --with-tune=amdfam10 --with-arch_32=x86-64
 Thread model: posix
-gcc version 4.6.1 (GCC)
-COLLECT_GCC_OPTIONS='-E' '-v' '-mtune=generic' '-march=x86-64'
- /pkg/local/gcc/4.6.1/libexec/gcc/x86_64-unknown-linux-gnu/4.6.1/cc1 -E -quiet -v - -mtune=generic -march=x86-64
-ignoring nonexistent directory "/pkg/local/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../x86_64-unknown-linux-gnu/include"
-#include "..." search starts here:
-#include <...> search starts here:
- /pkg/local/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/include
- /usr/local/include
- /pkg/local/gcc/4.6.1/include
- /pkg/local/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/include-fixed
- /usr/include
-End of search list.
+gcc version 5.3.0 (GCC)
 ```
- 4.8.3: 使用前要先 ```source /pkg/local/gcc/4.8.3/gcc483.sh```
+註：選用GCC版本時要挑選支援C++11規範，否則無法成功編譯NEMO5主程式。
 
- cpp -v
- ```
- Using built-in specs.
-COLLECT_GCC=cpp
-Target: x86_64-suse-linux
-Configured with: ../configure --prefix=/pkg/local/gcc/4.8.3 --with-cpu-64=amdfam10 --with-arch-64=amdfam10 --with-tune-64=amdfam10 --enable-languages=c,c++,objc,fortran,obj-c++,java,ada --enable-checking=release --enable-ssp --disable-libgcj --with-slibdir=/pkg/local/gcc/4.8.3/lib64 --with-pkgversion='SUSE Linux' --with-system-zlib --enable-__cxa_atexit --enable-version-specific-runtime-libs --enable-linux-futex --without-system-libunwind --build=x86_64-suse-linux --disable-multilib --enable-werror --with-gmp=/pkg/gnu --with-mpfr=/pkg/gnu --with-mpc=/pkg/gnu
-Thread model: posix
-gcc version 4.8.3 (SUSE Linux)
-COLLECT_GCC_OPTIONS='-E' '-v' '-mtune=amdfam10' '-march=amdfam10'
- /pkg/local/gcc/4.8.3/libexec/gcc/x86_64-suse-linux/4.8.3/cc1 -E -quiet -v - -mtune=amdfam10 -march=amdfam10
-ignoring nonexistent directory "/pkg/local/gcc/4.8.3/lib/gcc/x86_64-suse-linux/4.8.3/../../../../x86_64-suse-linux/include"
-#include "..." search starts here:
-#include <...> search starts here:
- /pkg/local/gcc/4.8.3/lib/gcc/x86_64-suse-linux/4.8.3/include
- /usr/local/include
- /pkg/local/gcc/4.8.3/include
- /pkg/local/gcc/4.8.3/lib/gcc/x86_64-suse-linux/4.8.3/include-fixed
- /usr/include
-End of search list.
- ```
-註1：4.3.4版本太舊不支援C++11規範，無法編譯NEMO5主程式。
-註2：ALPS上的4.8.3無法成功編譯VTK5.10.0，但在另外一台CENTOS的原生4.8.3卻可以編譯成功。
 * INTEL
 
- 2015:使用前要先 ```source /pkg/intel/2015/composer_xe_2015.2.164/bin/compilervars.sh intel64```
+ 2015:使用前要先 ```module load compiler/intel/2015```
 
- 2013:使用前要先```source /pkg/intel/2013/composer_xe_2013.5.192/bin/compilervars.sh intel64```
+ 2013:使用前要先```module load compiler/intel/2013```
 
- 12:使用前要先```source /pkg/intel/12/composer_xe_2011_sp1.9.293/bin/compilervars.sh intel64```
-
- 11.1:未測試。
-
- 10:未測試。
-
- 註1：LIBMESH很挑INTEL編譯器版本，例如intel V14版的要到libmesh0.9.3才支援。
+ 12.1:使用前要先```module load compiler/intel/12.1```
+ 
+ 註1：LIBMESH很挑INTEL編譯器版本，如果要用intel V14版以後的，LIBMESH要用libmesh-0.9.3以後的。
  
  註2：主程式內會用到FEAST Eigenvalue Solver，MKL要11.0 Update 2才有這功能，所以如果要使用MKL的FEAST Eigenvalue Solver，編譯器最少要用2013以上的。
 

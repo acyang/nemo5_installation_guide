@@ -6,24 +6,25 @@
 ```
 include ../make.inc
 
-VTK_VERSION = 5.10.0
-INSTALL_DIR = $(PWD)
+VTK_VERSION = 5.10.1
+INSTALL_DIR = $(PWD)/$(VTK_VERSION)
 
 all: static shared
 
 static: VTK/CMakeLists.txt
 	(cd VTK/; export CC="$(MPICC)"; export CXX="$(MPICXX)"; \
-	 cmake -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=$(PWD) .; \
-	 make -j 24; make install)
+	 cmake -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=$(INSTALL_DIR) .; \
+	 make -j 24 ; make install)
 
 shared: VTK/CMakeLists.txt
 	(cd VTK/; export CC="$(MPICC)"; export CXX="$(MPICXX)"; \
-	 cmake -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=$(PWD) .; \
+	 cmake -DBUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=$(INSTALL_DIR) .; \
 	 make -j 24; make install)
 
-VTK/CMakeLists.txt:
+VTK/CMakeLists.txt: 
 	tar zxvf vtk-$(VTK_VERSION).tar.gz
-	chmod -R a+w VTK/;
+	mv VTK$(VTK_VERSION) VTK
+	chmod -R a+w VTK/; # mandatory, otherwise make process will fail
 ```
 修改後存檔，再make。
 

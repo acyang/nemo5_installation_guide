@@ -67,10 +67,9 @@ gcc version 5.3.0 (GCC)
  太多組合，不一一詳列，根據所選擇的編譯器工具決定要用哪一組。
 * impi
 
- 4.1.3.049:使用前要先```source /pkg/mpi/impi/4.1.3.049/intel64/bin/mpivars.sh```
-
- 5.0.3.048:使用前要先```source /pkg/mpi/impi/5.0.3.048/intel64/bin/mpivars.sh```
-
+ 5.0.3.049(和此版本搭配的是2015):使用前要先```module load mpi/intel/impi/5.0.3.049```
+ 
+ 4.1.3.049(和此版本搭配的是2013):使用前要先```module load mpi/intel/impi/4.1.3.049```
 
 ###可用工具組
 INTEL composer_xe_2015.2.164 + impi4.1.3.049(何博成功)

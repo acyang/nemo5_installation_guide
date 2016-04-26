@@ -88,8 +88,8 @@ clean:
 * petsc
 ```
 cd petsc
-mv make.inc make.inc.bak
-ln -s ../make.inc make.inc
+cp Makefile Makefile.custom
+make -f Makefile.custom
 make
 ```
 修改Makefile
@@ -212,8 +212,8 @@ clean:
 * slepc
 ```
 cd slepc
-mv make.inc make.inc.bak
-ln -s ../make.inc make.inc
+cp Makefile Makefile.custom
+make -f Makefile.custom
 make
 ```
 修改Makefile
@@ -307,8 +307,8 @@ clean:
 * libmesh
 ```
 cd libmesh
-mv make.inc make.inc.bak
-ln -s ../make.inc make.inc
+cp Makefile Makefile.custom
+make -f Makefile.custom
 make
 ```
 Makefile
@@ -367,7 +367,8 @@ clean:
 	cd libmesh-$(LIBMESH_VERSION); make clean
 
 ```
-註：有0.9.4可以嘗試。
+註：有0.9.5可以嘗試。
+./configure在檢查vtk時，VTK_LIBRARY要用-rpath方式指定連結位置，所以在configure第35799行要加上去，不然vtk都會檢查不過。
 * TAO
 ```
 cd TAO

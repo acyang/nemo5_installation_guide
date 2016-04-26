@@ -25,6 +25,7 @@ cd UMFPACK
 cp Makefile Makefile.custom
 make -f Makefile.custom
 ```
+註：UMFPACK requires the AMD package to be in ../AMD
 * silo
 ```
 cd silo

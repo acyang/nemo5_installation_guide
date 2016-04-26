@@ -10,56 +10,53 @@ cd libs
 ```
 cd ARPACK
 cp Makefile Makefile.custom
-make
+make -f Makefile.custom
 ```
 註：mpif77不要傻傻設為mpif77要設為mpiifort，不然後面slepc在link時就會出錯。
 * AMD
 ```
 cd AMD
 cp Makefile Makefile.custom
-make
+make -f Makefile.custom
 ```
 * UMFPACK
 ```
 cd UMFPACK
 cp Makefile Makefile.custom
-make
+make -f Makefile.custom
 ```
 * silo
 ```
 cd silo
 cp Makefile Makefile.custom
-make
+make -f Makefile.custom
 ```
 註：有4.10.2可以嘗試。
 * qhull
 ```
 cd qhull-2010.1
-mv make.inc make.inc.bak
-ln -s ../make.inc make.inc
-make
+cp Makefile Makefile.custom
+make -f Makefile.custom
 ```
 註：有2012.1可以嘗試。
 * tensor3D
 ```
 cd tensor3D
-mv make.inc make.inc.bak
-ln -s ../make.inc make.inc
-make
+cp Makefile Makefile.custom
+make -f Makefile.custom
 ```
 * tetgen
 ```
 cd tetgen1.4.3
-mv make.inc make.inc.bak
-ln -s ../make.inc make.inc
-make
+cp Makefile Makefile.custom
+make -f Makefile.custom
 ```
 註：在Makefile裡會把CXXFLAGS和PRECXXFLAGS設為-O0，不要積極最佳化，避免執行時出錯。
 * krp
 ```
 cd krp
-vi Makefile
-make
+cp Makefile Makefile.custom
+make -f Makefile.custom
 ```
 註：修正編譯器名稱以及PAPI路徑。
 

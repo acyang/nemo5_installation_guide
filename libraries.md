@@ -369,6 +369,8 @@ clean:
 ```
 註：有0.9.5可以嘗試。
 ./configure在檢查vtk時，VTK_LIBRARY要用-rpath方式指定連結位置，所以在configure第35799行要加上去，不然vtk都會檢查不過。
+./configure在檢查HDF5時，第37051後面幾行要改成-L${HDF5_PREFIX}/lib64
+
 * TAO
 ```
 cd TAO

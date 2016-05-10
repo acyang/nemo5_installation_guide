@@ -367,7 +367,10 @@ clean:
 	cd libmesh-$(LIBMESH_VERSION); make clean
 
 ```
-註：有0.9.5可以嘗試。
+註1：0.9.5確定支援petsc 3.6.x，但對boost有1.55.0的要求，ALPS上的版本自帶的版本是1.53.0，版本不一致可能會出錯。
+
+註2：0.9.4比petsc 3.5.4早釋出，不確定否有支援3.5.4。
+
 ./configure在檢查vtk時，VTK_LIBRARY要用-rpath方式指定連結位置，所以在configure第35799行要加上去，不然vtk都會檢查不過。
 ./configure在檢查HDF5時，第37051後面幾行要改成-L${HDF5_PREFIX}/lib64
 libmesh-0.9.5需要boost-1.55.0以上
